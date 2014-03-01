@@ -23,6 +23,15 @@
 	<body>
 		<div id="wrapper" ng-controller="sweeperCtrl">
 			<h1>DiamondSweeper</h1>
+			
+			<div class="menu">
+				<select ng-model="difficulty" class="">
+					<option value="1">Easy</option>
+					<option value="2">Medium</option>
+					<option value="3">Hard</option>
+				</select>
+				<button class="btn-start"  ng-click="startGame()">Start Game</button>
+			</div>
 			<div class="field" ng-repeat="field in fields" ng-click="selectField($index)" ng-right-click="markField($index)" ng-class="{marked:field.marked, mine : (field.mine&&field.visible), visible: field.visible}">
 				{{field.mines}}
 			</div>

@@ -6,13 +6,20 @@ define(['./module'], function(controllers) {'use strict';
 		var maxY = 20;
 		var running = true;
 		var stack = [];
+		$scope.difficulty = 1;
 		
+		$scope.startGame = function(){
+			$scope.fields = [];
+			running = true;
+			$scope.mixFields();
+		};
 		var getId = function(x, y) {
 			return x * maxX + y;
 		};
 
-		var createField = function(x, y) {
-			var rand = Math.floor(Math.random() * 8);
+		var createField = function(x, y,it) {
+			
+			var rand = Math.floor(Math.random() * it);
 			return {
 				x : x,
 				y : y,
@@ -57,13 +64,26 @@ define(['./module'], function(controllers) {'use strict';
 				}
 				$scope.fields[index].visible = true;
 			}
-			console.log(stack);
 		};
 
 		$scope.mixFields = function() {
+			var it = 8;
+			console.log($scope.difficulty);
+			switch(parseInt($scope.difficulty)){
+				case 1:
+				it = 40;
+				break;
+				case 2:
+				it = 20;
+				break;
+				case 3:
+				it: 5;
+				break;
+			}
+			console.log(it);
 			for (var i = 0; i < 20; i++) {
 				for (var j = 0; j < 20; j++) {
-					$scope.fields.push(createField(i, j));
+					$scope.fields.push(createField(i, j,it));
 				}
 			}
 		};

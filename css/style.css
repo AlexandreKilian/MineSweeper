@@ -67,3 +67,7 @@ body {
 #wrapper .card.found {
   opacity: 0.4;
 }
+.menu {
+  text-align: center;
+  padding: 20px 0;
+}
