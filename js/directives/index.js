@@ -1,0 +1,3 @@
+define([
+     './rightclickDirective',
+ ], function () {});
