@@ -4,7 +4,7 @@ define(['./module'], function (controllers) {
      	$scope.fields = [];
      	var maxX = 20;
      	var maxY = 20;
-     	
+     	var running = true;
      	var getId = function(x,y){
      		return x * maxX + y;
      	};
@@ -64,7 +64,10 @@ define(['./module'], function (controllers) {
      	};
      	
      	$scope.selectField = function(index){
+     		if(!running)return;
      		if($scope.fields[index].mine){
+     			$scope.fields[index].visible=true;
+     			running = false;
      		} else{
      			checkField(index,0);
      			// $scope.fields[index].visible = true;
