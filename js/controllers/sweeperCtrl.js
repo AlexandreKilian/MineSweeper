@@ -12,7 +12,7 @@ define(['./module'], function(controllers) {'use strict';
 		};
 
 		var createField = function(x, y) {
-			var rand = Math.floor(Math.random() * 3);
+			var rand = Math.floor(Math.random() * 8);
 			return {
 				x : x,
 				y : y,
@@ -35,7 +35,7 @@ define(['./module'], function(controllers) {'use strict';
 				var bombs = 0;
 				
 				if ($scope.fields[index].visible || $scope.fields[index].mine)continue;
-					
+				var tempstack = [];
 				for (var i = (x - 1); i <= (x + 1); i++) {
 					for (var j = (y - 1); j <= (y + 1); j++) {
 						if (i >= 0 && i < maxX && j >= 0 && j < maxY) {
@@ -44,7 +44,7 @@ define(['./module'], function(controllers) {'use strict';
 							} else {
 								var neighbour = getId(i, j);
 								if (!(stack.indexOf(neighbour) > 0))
-									stack.push(neighbour);
+									tempstack.push(neighbour);
 
 							}
 						}
@@ -52,6 +52,8 @@ define(['./module'], function(controllers) {'use strict';
 				}
 				if (bombs > 0) {
 					$scope.fields[index].mines = bombs;
+				} else{
+					stack = stack.concat(tempstack);
 				}
 				$scope.fields[index].visible = true;
 			}
