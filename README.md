@@ -3,6 +3,11 @@
 
 A simple Minesweeper application based on AngularJS.
 
+###Installation
+
+Run bower install to get all needed vendors (Bootstrap, jQuery, AngularJS and RequireJS).
+
+
 ---
 
 Copyright (C) 2014 

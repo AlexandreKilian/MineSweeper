@@ -1,0 +1,27 @@
+{
+  "name": "DiamondSweepr",
+  "version": "1.0.0",
+  "authors": [
+    "Alexandre Kilian <alexandre@diamonddev.com>"
+  ],
+  "description": "A Simple Minesweeper Game using AngularJS",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://www.diamonddev.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "less": "~1.5.0",
+    "bootstrap": "~3.1.0",
+    "angular": "~1.2.11",
+    "requirejs": "~2.1.10",
+    "requirejs-domready": "~2.0.1"
+  }
+}
